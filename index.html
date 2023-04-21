@@ -12,7 +12,7 @@
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScnfcKUvSGo7e1U8lWONtAwDeiZ5SiVjQrQaLMFUwCWsV7iWA/viewform">Create post</a>
     <div class="app__videos">
  <div class="video">
-        <video class="video__player" preload="none" loop controls="autoplay">
+        <video id="ok" class="video__player" preload="none" loop controls>
 <source src="Video-7.mp4" type="video/mp4">
   <source src="Video-7.ogg" type="video/ogg">
 404
@@ -22,12 +22,12 @@
         <div class="videoSidebar">
           <div class="videoSidebar__button">
             <span class="material-icons"> favorite_border </span>
-            <p>519K</p>
+            <p>876.16K</p>
           </div>
 
           <div class="videoSidebar__button">
             <span class=> ⬇️ </span>
-            <p>233.63K</p>
+            <p>336.3K</p>
           </div>
 
         
@@ -50,7 +50,7 @@
         </div>
       </div>
  <div class="video">
-        <video class="video__player" preload="none" loop controls="autoplay">
+        <video id="ok" class="video__player" preload="none" loop controls="autoplay">
 <source src="Video-3.mp4" type="video/mp4">
   <source src="Video-2.ogg" type="video/ogg">
 404
@@ -60,12 +60,12 @@
         <div class="videoSidebar">
           <div class="videoSidebar__button">
             <span class="material-icons"> favorite_border </span>
-            <p>175.19K</p>
+            <p>759K</p>
           </div>
 
           <div class="videoSidebar__button">
             <span class=> ⬇️ </span>
-            <p>53.63K</p>
+            <p>363K</p>
           </div>
 
         
@@ -88,7 +88,7 @@
         </div>
       </div>
  <div class="video">
-        <video class="video__player" preload="none" loop controls="autoplay">
+        <video id="ok" class="video__player" preload="none" loop controls="autoplay">
 <source src="Video-5.mp4" type="video/mp4">
   <source src="Video-5.ogg" type="video/ogg">
 404
@@ -126,7 +126,7 @@
         </div>
       </div>
  <div class="video">
-        <video class="video__player" preload="none" loop controls="autoplay">
+        <video id="ok" class="video__player" preload="none" loop controls="autoplay">
 <source src="Video-1.mp4" type="video/mp4">
   <source src="Video-1.ogg" type="video/ogg">
 404
@@ -163,8 +163,8 @@
     
         </div>
       </div>
- <div class="video">
-        <video class="video__player" preload="none" loop controls="autoplay">
+ <div  class="video">
+        <video id="ok" class="video__player" preload="none" loop controls="autoplay">
 <source src="Video-4.mp4" type="video/mp4">
   <source src="Video-4.ogg" type="video/ogg">
 404
@@ -202,7 +202,7 @@
         </div>
       </div>
  <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video0.mp4" type="video/mp4">
   <source src="Video0.ogg" type="video/ogg">
 404
@@ -241,7 +241,7 @@
       </div>
       <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video1.mp4" type="video/mp4">
   <source src="Video1.ogg" type="video/ogg">
 404
@@ -281,7 +281,7 @@
 
       <!-- video starts -->
       <div class="video">
-        <video class="video__player" preload="none" loop controls onscroll>
+        <video id="ok" class="video__player" preload="none" loop controls onscroll>
 <source src="Video2.mp4" type="video/mp4">
   <source src="video2.ogg" type="video/ogg">
 404
@@ -329,7 +329,7 @@
 
       <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video3.mp4" type="video/mp4">
   <source src="Video3.ogg" type="video/ogg">
 404
@@ -368,7 +368,7 @@
 
       <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video4.mp4" type="video/mp4">
   <source src="Video4.ogg" type="video/ogg">
 404
@@ -407,7 +407,7 @@
       </div>
  <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video5.mp4" type="video/mp4">
   <source src="Video5<<<.ogg" type="video/ogg">
 404
@@ -446,7 +446,7 @@
       </div>
  <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video6.mp4" type="video/mp4">
   <source src="Video6.ogg" type="video/ogg">
 404
@@ -485,7 +485,7 @@
       </div>
  <!-- video starts -->
       <div class="video">
-        <video class="video__player" loop controls>
+        <video id="ok" class="video__player" loop controls>
 <source src="Video7.mp4" type="video/mp4">
   <source src="Video7.ogg" type="video/ogg">
 404
@@ -525,20 +525,31 @@
      </div>
     <script>
     
-    
-      const videos = document.querySelectorAll('video');
+	let options = {
+		root:null,
+		rootMargin:'0px',
+		threshold:1.0
+	};
 
-      for (const video of videos) {
-        video.addEventListener('autoplay', function () {
-          console.log('clicked');
-          if (video.paused) {
-            video.play();
-          } else {
-            video.pause();
-          }
-        });
-      }
-      alert("Starting Server! is done")
+	let callback = (entries, observer)=>{
+		entries.forEach(entry => {
+			if(entry.target.id=='##')
+			{
+if(entry.target.id=='##')
+			{
+				if(entry.isIntersecting){
+					entry.target.play();
+				}
+				else{
+					entry.target.pause();
+				}
+			}
+		});
+	}
+let observer = nwe IntersectionObserver(callback, options);
+	observer.observe(document.querySelector('#ok'));
+
+      confirm("Tip🐦:Swipe left side and click refresh")
     </script>
   </body>
 </html>
