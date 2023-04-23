@@ -1287,32 +1287,41 @@ window.onclick = function(event) {
       </div>
      </div>
     <script>
-    
-	let options = {
-		root:null,
-		rootMargin:'0px',
-		threshold:1.0
-	};
+    //getting video element
+var v = $("#ok");
 
-	let callback = (entries, observer)=>{
-		entries.forEach(entry => {
-			if(entry.target.id=='ok')
-			{
-if(entry.target.id=='##')
-			{
-				if(entry.isIntersecting){
-					entry.target.play();
-				}
-				else{
-					entry.target.pause();
-				}
-			}
-		});
-	}
-let observer = nwe IntersectionObserver(callback, options);
-	observer.observe(document.querySelector('#ok'));
+// calling function on scroll
+$("#video-wrapper").on('mousewheel','#ok',function(){
+    var playVideoByScrollv = new PlayVideoByScrollok(ok);
+});
 
-      confirm("Tip🐦:Swipe left side and click refresh")
+var PlayVideoByScrollvlok = function(video,e){
+
+    var evt=window.event || e //equalize event object
+    //delta returns +120 when wheel is scrolled up, -120 when scrolled down
+    var delta = evt.detail ? evt.detail*(-120) : evt.wheelDelta 
+
+    if(delta<=-120){
+       video.currentTime += (1 / 24);
+       video[0].play();
+       setTimeout(function(){
+           video[0].pause();
+       },40);
+    }
+    else{
+       video.currentTime -= (1 / 24);
+       video[0].play();
+       setTimeout(function(){
+           video[0].pause();
+       },40);
+    }
+
+    if (evt.preventDefault) //disable default wheel action of scrolling page
+        evt.preventDefault()
+    else
+        return false
+}
+	confirm("Tip🐦:Swipe left side and click refresh")
     </script>
   </body>
 </html>
