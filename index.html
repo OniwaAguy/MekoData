@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
-  <body>
+  <body onsubmit="" onoffline="myFunction()">
 <style>
 
 
@@ -2120,41 +2120,15 @@ window.onclick = function(event) {
       </div>
      </div>
     <script>
-    //getting video element
-var v = $("#ok");
-
-// calling function on scroll
-$("#video-wrapper").on('mousewheel','#ok',function(){
-    var playVideoByScrollv = new PlayVideoByScrollok(ok);
-});
-
-var PlayVideoByScrollvlok = function(video,e){
-
-    var evt=window.event || e //equalize event object
-    //delta returns +120 when wheel is scrolled up, -120 when scrolled down
-    var delta = evt.detail ? evt.detail*(-120) : evt.wheelDelta 
-
-    if(delta<=-120){
-       video.currentTime += (1 / 24);
-       video[0].play();
-       setTimeout(function(){
-           video[0].pause();
-       },40);
-    }
-    else{
-       video.currentTime -= (1 / 24);
-       video[0].play();
-       setTimeout(function(){
-           video[0].pause();
-       },40);
-    }
-
-    if (evt.preventDefault) //disable default wheel action of scrolling page
-        evt.preventDefault()
-    else
-        return false
+    function myFunction() {
+  console.error("Internet::major.error")
+  confirm("No internet !                                Check your wifi/Data")
+  confirm("Error:404")
 }
-	confirm("Tip🐦:Swipe left side and click refresh")
-    </script>
+
+
+
+
+ </script>
   </body>
 </html>
