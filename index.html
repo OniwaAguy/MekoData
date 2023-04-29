@@ -188,6 +188,20 @@ window.onclick = function(event) {
 }
 </script>
 <a href="https://oniwaaguy.github.io/Mekoq/" >[Groups}</a>
+<a id="audio-control" class="muted">[Unmute]</a>
+
+<script>
+$('#audio-control').click(function(){
+    if( $("#ok").prop('muted') ) {
+          $("#ok").prop('muted', false);
+          $(this).text('Mute');
+      // or toggle class, style it with a volume icon sprite, change background-position
+    } else {
+      $("#ok").prop('muted', true);
+      $(this).text('Unmute');
+    }
+});
+</script>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScnfcKUvSGo7e1U8lWONtAwDeiZ5SiVjQrQaLMFUwCWsV7iWA/viewform">[Create post]</a>
   
 
@@ -206,7 +220,7 @@ window.onclick = function(event) {
 
 <div class="app__videos">
  <div class="video">
-        <video id="ok" class="video__player" preload="none" loop controls>
+        <video id="ok" class="video__player" preload="none" autoplay muted loop controls>
 <source src="VideoA632.mp4" type="video/mp4">
   <source src="VideoA632.mp4" type="video/ogg">
 404
@@ -244,7 +258,7 @@ window.onclick = function(event) {
         </div>
       </div>
 <div class="video">
-        <video id="ok" class="video__player" preload="none" loop controls>
+        <video id="ok" class="video__player" preload="none" autoplay muted loop controls>
 <source src="VideoA63.mp4" type="video/mp4">
   <source src="VideoA63.ogg" type="video/ogg">
 404
